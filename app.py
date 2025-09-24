@@ -1,5 +1,8 @@
 import streamlit as st
 import time
+
+THRESHOLD = 0.8
+
 from model_utils import load_model_and_tokenizer, predict_sentiment, create_sentiment_gauge
 from ui_components import (
     render_text_input, render_example_buttons, render_sentiment_result,
@@ -63,7 +66,7 @@ def handle_selected_example():
     return None, False
 
 def display_analysis_results(prediction_score, user_text):
-    is_positive = prediction_score > 0.5
+    is_positive = prediction_score > THRESHOLD
     sentiment_label = "Positive" if is_positive else "Negative"
     confidence = prediction_score if is_positive else (1 - prediction_score)
     
