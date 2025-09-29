@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 
-THRESHOLD = 0.8
+THRESHOLD = 0.5
 
 from model_utils import load_model_and_tokenizer, predict_sentiment, create_sentiment_gauge
 from ui_components import (
