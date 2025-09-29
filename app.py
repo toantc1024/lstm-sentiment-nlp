@@ -57,6 +57,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.write("Current threshold: ", THRESHOLD)
+
 def handle_selected_example():
     if hasattr(st.session_state, 'selected_example'):
         user_text = st.session_state.selected_example
